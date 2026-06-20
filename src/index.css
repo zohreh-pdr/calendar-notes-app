@@ -1,0 +1,305 @@
+:root {
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+html, ::after, ::before {
+  box-sizing: border-box;
+}
+
+
+h1,
+h2 {
+  font-family: var(--heading);
+}
+
+
+body {
+  background-color:#f8fafc;
+  font-size: 1.3rem;
+  color: #010d43;
+
+}
+
+.header {
+  text-align: center;
+}
+h1  {
+  line-height: 40px;
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    #3498DB,   /* رنگ سردترین ماه (ژانویه) */
+    #2C3E50,   /* زمستان عمیق (دسامبر) */
+    #27AE60,   /* بهار (می‌انه راه) */
+    #D35400,   /* پاییز (نارنجی-قهوه‌ای) */
+    #8E44AD    /* پاییز (بنفش) */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+h2 {
+  font-size: 1.5rem;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 0;
+
+}
+
+.month-container {
+  background-color: #e9ebee63;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0.5rem;
+  border-radius: 30px;
+  box-shadow: 0 8px 30px rgba(99,102,241,0.15);
+
+}
+
+.month-container h2 {
+  margin-bottom: 3rem;
+}
+
+.days-container {
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns:repeat(7, 1fr);
+  padding: 10px 5px;
+  border-radius: 10px;
+  height: 250px;
+
+
+}
+
+.days-container p {
+  margin:5px 0 10px;
+  
+}
+
+.days-container button {
+  width: 50px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.2s ease-in-out;
+  font-weight: 700;
+  font-size: 8px;
+  color: #FFF;
+  position: relative;
+}
+
+.days-container button #dayHasNote {
+ position: absolute;
+ top: 0;
+ right: 20%;
+ color: yellow
+}
+
+.month-item {
+  background-color: #ffffff;
+  padding: 1rem 1rem;
+  height: 80px ;
+  width: 200px;
+  text-align: center;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  /* color: #fff; */
+  box-shadow: 0 8px 30px rgba(99,102,241,0.15);
+}
+
+.month-item:hover {
+  box-shadow: 0 8px 30px rgba(99,102,241,0.5);
+  transform: scale(1.1);
+ 
+}
+
+.month-item h2{
+  margin-top: 0;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.month-item button {
+  padding: 10px 15px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #6366f1;
+  color:#fff; 
+  transition: all 0.3s ease-in-out;
+}
+
+.month-item button:hover {
+  background-color: #5053df;
+  color: #fff;
+}
+.btns-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-next, .btn-prev, .btn-menu {
+ color: #111;
+ cursor: pointer;
+ background-color: transparent;
+ border: none;
+}
+.btn-menu {
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+.btn-menu:hover,
+.btn-next:hover,
+.btn-prev:hover{
+  color: #7605af;
+}
+.note-list {
+  list-style:none;
+  padding-left: 0;
+  
+}
+
+.note-list button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+.note-list button:hover {
+  color:#D35400;
+}
+
+.note-list li {
+  background-color: #e9ebee63;
+  padding: 0.7rem 1.5rem;
+  width: 300px;
+  border-radius: 30px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.disactive {
+  background-color: #61768a;
+  color: inherit;
+  
+}
+.active {
+  background-color: #6366f1;
+  color: #fff;
+}
+
+.notes-container  {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+
+}
+.notes-container .btn-addNote {
+  margin-left: 0.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.notes-container .btn-addNote:hover {
+  background-color:#9932CC;
+  color: #fff;
+}
+.notes-container .btn-addNote, input {
+  padding: 0.5rem 1rem;
+  background-color: inherit;
+  outline: none;
+  border: 2px solid #9932CC;
+  border-radius: 10px;
+}
+
+
+.note-text {
+  color: #010d43;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px){
+  #root {
+    margin-top: 2rem;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    line-height: 100px;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  .container {
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+  }
+  .month-item {
+    height: 100px;
+  }
+  .month-item h2 {
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  .days-container {
+    gap: 8px;
+    height: 350px;
+    padding: 5px 10px;
+  }
+  .days-container button {
+    width: 80px;
+    height: 60px;
+    font-size: 0.6rem;
+    padding: 3px;
+
+  }
+  .month-container {
+    padding: 2rem;
+
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+}

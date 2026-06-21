@@ -81,7 +81,7 @@ npm run dev
 
 ## 📷 Preview
 
-![Calendar Preview](/calendar-app-screenshot.png)
+![Calendar Preview](/public/calendar-app-screenshot.png)
 ---
 
 ## 👩‍💻 Author
